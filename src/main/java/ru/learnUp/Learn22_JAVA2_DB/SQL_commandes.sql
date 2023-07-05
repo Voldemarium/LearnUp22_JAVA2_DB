@@ -52,7 +52,14 @@ SELECT * FROM learnup.student WHERE group_id IN (
       FROM learnup.teacher
       WHERE learnup.teacher.id = 1
       );
+
 -- найти всех студентов всех преподавателей (с совпадающими group_id)
+--  с объединением в одну таблицу преподавателя и его студентов
+      SELECT *
+      FROM learnup.teacher t JOIN learnup.student s
+      ON t.group_id = s.group_id;
+
+-- найти всех студентов преподавателя с id=1 (и с совпадающими group_id)
 --  с объединением в одну таблицу преподавателя и его студентов
       SELECT *
       FROM learnup.teacher t JOIN learnup.student s
